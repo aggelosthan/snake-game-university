@@ -140,33 +140,8 @@ function info() {
     // Choose a random move from the safe moves
     const nextMove = safeMoves[Math.floor(Math.random() * safeMoves.length)];
 
-    // Step 4 - Move towards food
-    const food = gameState.board.food;
-    
-    if (food.length > 0 && safeMoves.length > 0) {
-      // Find closest food
-      let closestFood = food[0];
-      let minDistance = Math.abs(myHead.x - food[0].x) + Math.abs(myHead.y - food[0].y);
-      
-      food.forEach((foodPiece) => {
-        const distance = Math.abs(myHead.x - foodPiece.x) + Math.abs(myHead.y - foodPiece.y);
-        if (distance < minDistance) {
-          closestFood = foodPiece;
-          minDistance = distance;
-        }
-      });
-      
-      // Move towards the closest food if possible
-      if (closestFood.x < myHead.x && isMoveSafe.left) {
-        nextMove = "left";
-      } else if (closestFood.x > myHead.x && isMoveSafe.right) {
-        nextMove = "right";
-      } else if (closestFood.y < myHead.y && isMoveSafe.down) {
-        nextMove = "down";
-      } else if (closestFood.y > myHead.y && isMoveSafe.up) {
-        nextMove = "up";
-      }
-    }
+    // TODO: Step 4 - Move towards food instead of random, to regain health and survive longer
+    // food = gameState.board.food;
 
     console.log(`MOVE ${gameState.turn}: ${nextMove}`)
     return { move: nextMove };
