@@ -68,30 +68,32 @@ function info() {
 
     // TODO: Step 1 - Prevent your Battlesnake from moving out of bounds
     // boardWidth = gameState.board.width;
-    // boardHeight = gameState.board.height;
-    // Prevent your Battlesnake from moving out of bounds
-    const boardWidth = gameState.board.width;
-    const boardHeight = gameState.board.height;
-
-    // Check if moving in each direction would hit a wall
-    if (myHead.x === 0) {
-      isMoveSafe.left = false;
-    }
-    if (myHead.x === boardWidth - 1) {
-      isMoveSafe.right = false;
-    }
-    if (myHead.y === 0) {
-      isMoveSafe.down = false;
-    }
-    if (myHead.y === boardHeight - 1) {
-      isMoveSafe.up = false;
-    }
+    // boardHeight = gameState.board.height;;;;
 
     // TODO: Step 2 - Prevent your Battlesnake from colliding with itself
     // myBody = gameState.you.body;
 
     // TODO: Step 3 - Prevent your Battlesnake from colliding with other Battlesnakes
     // opponents = gameState.board.snakes;
+    // Prevent your Battlesnake from colliding with other Battlesnakes
+    const opponents = gameState.board.snakes;
+
+    opponents.forEach((snake) => {
+      snake.body.forEach((segment) => {
+        if (segment.x === myHead.x - 1 && segment.y === myHead.y) {
+          isMoveSafe.left = false;
+        }
+        if (segment.x === myHead.x + 1 && segment.y === myHead.y) {
+          isMoveSafe.right = false;
+        }
+        if (segment.x === myHead.x && segment.y === myHead.y - 1) {
+          isMoveSafe.down = false;
+        }
+        if (segment.x === myHead.x && segment.y === myHead.y + 1) {
+          isMoveSafe.up = false;
+        }
+      });
+    });
 
     // Are there any safe moves left?
     const safeMoves = Object.keys(isMoveSafe).filter(key => isMoveSafe[key]);
@@ -110,9 +112,10 @@ function info() {
     return { move: nextMove };
   }
 
-  runServer({
-    info: info,
-    start: start,
-    move: move,
-    end: end
-  });
+}
+runServer({
+  info: info,
+  start: start,
+  move: move,
+  end: end
+});
