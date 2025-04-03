@@ -88,7 +88,25 @@ function info() {
     }
 
     // TODO: Step 2 - Prevent your Battlesnake from colliding with itself
-    // myBody = gameState.you.body;
+    // myBody = gameState.you.body
+    const myBody = gameState.you.body;
+
+    // Check if any move would collide with our own body
+    myBody.forEach((segment) => {
+      if (segment.x === myHead.x - 1 && segment.y === myHead.y) {
+        isMoveSafe.left = false;
+      }
+      if (segment.x === myHead.x + 1 && segment.y === myHead.y) {
+        isMoveSafe.right = false;
+      }
+      if (segment.x === myHead.x && segment.y === myHead.y - 1) {
+        isMoveSafe.down = false;
+      }
+      if (segment.x === myHead.x && segment.y === myHead.y + 1) {
+        isMoveSafe.up = false;
+      }
+    });
+
 
     // TODO: Step 3 - Prevent your Battlesnake from colliding with other Battlesnakes
     // opponents = gameState.board.snakes;
