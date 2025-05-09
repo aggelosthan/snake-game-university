@@ -86,3 +86,15 @@ support = true
 [[ports]]
 localPort = 8000
 externalPort = 80
+
+[workflows]
+runButton = "Run Snake"
+
+[[workflows.workflow]]
+name = "Run Snake"
+author = 41128402
+mode = "sequential"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "node index.js"
