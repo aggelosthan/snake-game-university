@@ -40,7 +40,8 @@ function info() {
 
   // move is called on every turn and returns your next move
   // Valid moves are "up", "down", "left", or "right"
-  // See https://docs.battlesnake.com/api/example-move for available data
+  // See https://docs.battlesnake.com/api/example-move
+ for available data
   function move(gameState) {
 
     let isMoveSafe = {
@@ -152,7 +153,7 @@ function info() {
     // Are there any safe moves left?
     const safeMoves = Object.keys(isMoveSafe).filter(key => isMoveSafe[key]);
     if (safeMoves.length == 0) {
-      console.log(`MOVE ${gameState.turn}: No safe moves detected! Moving down`);
+      console.log(MOVE ${gameState.turn}: No safe moves detected! Moving down);
       return { move: "down" };
     }
 
@@ -197,7 +198,7 @@ function info() {
       nextMove = safeMoves[Math.floor(Math.random() * safeMoves.length)];
     }
 
-    console.log(`MOVE ${gameState.turn}: ${nextMove}`);
+    console.log(MOVE ${gameState.turn}: ${nextMove});
     return { move: nextMove };
   }
 
