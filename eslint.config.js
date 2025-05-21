@@ -16,12 +16,14 @@ export default defineConfig([
       sonarjs: pluginSonarjs,
       unicorn: pluginUnicorn,
       'eslint-comments': pluginComments,
+      'jest': pluginJest,
     },
     extends: [
       'js/recommended',
       'plugin:sonarjs/recommended',
       'plugin:unicorn/recommended',
       'plugin:eslint-comments/recommended',
+      'plugin:jest/recommended',
       'prettier',
     ],
     rules: {
