@@ -1,12 +1,28 @@
-
 {
+  // Always add a semicolon at the end of statements
   "semi": true,
+
+  // Use single quotes instead of double quotes in JavaScript
   "singleQuote": true,
+
+  // Add trailing commas wherever possible in ES5 (objects, arrays, etc.)
   "trailingComma": "es5",
+
+  // Indent lines with 2 spaces
   "tabWidth": 2,
+
+  // Wrap lines at 100 characters
   "printWidth": 100,
+
+  // Always include parentheses around arrow function parameters
   "arrowParens": "always",
+
+  // Add spaces between brackets in object literals: { foo: bar }
   "bracketSpacing": true,
+
+  // Use Unix-style line endings (LF instead of CRLF)
   "endOfLine": "lf",
+
+  // Use double quotes in JSX attributes instead of single quotes
   "jsxSingleQuote": false
 }
