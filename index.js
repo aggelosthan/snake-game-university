@@ -22,9 +22,9 @@ function info() {
     apiversion: '1',
     author: 'aggelos',
     name: 'John Cena The Snaky Snake Snicker',
-    color: '#26CF04',
-    head: 'smile',
-    tail: 'bolt',
+    color: '#FF69B4',  // Hot pink color
+    head: 'pixel',     // Retro pixel head
+    tail: 'pixel',     // Matching pixel tail
   };
 }
 
@@ -211,33 +211,33 @@ function move(gameState) {
 function floodFill(board, start) {
   const visited = new Set();
   const queue = [start];
-  
+
   function isValid(point) {
     if (point.x < 0 || point.x >= board.width || point.y < 0 || point.y >= board.height) {
       return false;
     }
-    
+
     const key = `${point.x},${point.y}`;
     if (visited.has(key)) {
       return false;
     }
-    
+
     // Check if point collides with any snake
     return !board.snakes.some(snake => 
       snake.body.some(segment => segment.x === point.x && segment.y === point.y)
     );
   }
-  
+
   while (queue.length > 0) {
     const current = queue.shift();
     const key = `${current.x},${current.y}`;
-    
+
     if (!isValid(current)) {
       continue;
     }
-    
+
     visited.add(key);
-    
+
     // Add adjacent cells
     queue.push(
       { x: current.x + 1, y: current.y },
@@ -246,7 +246,7 @@ function floodFill(board, start) {
       { x: current.x, y: current.y - 1 }
     );
   }
-  
+
   return visited.size;
 }
 
