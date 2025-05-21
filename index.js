@@ -22,9 +22,9 @@ function info() {
     apiversion: '1',
     author: 'aggelos',
     name: 'John Cena The Snaky Snake Snicker',
-    color: '#26CF04',
-    head: 'smile',
-    tail: 'bolt',
+    color: '#FF69B4',  // Hot pink color
+    head: 'pixel',     // Retro pixel head
+    tail: 'pixel',     // Matching pixel tail
   };
 }
 
