@@ -115,6 +115,7 @@ function move(gameState) {
 
   opponents.forEach((snake) => {
     // Only check collision with non-tail segments if snake will eat food
+    const food = gameState.board.food;
     const willEatFood = food.some(f => 
       (f.x === myHead.x - 1 && f.y === myHead.y && isMoveSafe.left) ||
       (f.x === myHead.x + 1 && f.y === myHead.y && isMoveSafe.right) ||
@@ -207,7 +208,14 @@ function move(gameState) {
   return { move: nextMove };
 }
 
-runServer({
+function floodFill(grid, x, y, width, height) {
+  // Implementation of flood fill algorithm
+  // This is a placeholder, replace with actual implementation
+  return 0;
+}
+
+export { floodFill };
+export default runServer({
   info: info,
   start: start,
   move: move,
