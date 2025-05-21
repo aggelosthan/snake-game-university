@@ -114,18 +114,29 @@ function move(gameState) {
   const opponents = gameState.board.snakes;
 
   opponents.forEach((snake) => {
-    snake.body.forEach((segment) => {
-      if (segment.x === myHead.x - 1 && segment.y === myHead.y) {
-        isMoveSafe.left = false;
-      }
-      if (segment.x === myHead.x + 1 && segment.y === myHead.y) {
-        isMoveSafe.right = false;
-      }
-      if (segment.x === myHead.x && segment.y === myHead.y - 1) {
-        isMoveSafe.down = false;
-      }
-      if (segment.x === myHead.x && segment.y === myHead.y + 1) {
-        isMoveSafe.up = false;
+    // Only check collision with non-tail segments if snake will eat food
+    const willEatFood = food.some(f => 
+      (f.x === myHead.x - 1 && f.y === myHead.y && isMoveSafe.left) ||
+      (f.x === myHead.x + 1 && f.y === myHead.y && isMoveSafe.right) ||
+      (f.x === myHead.x && f.y === myHead.y - 1 && isMoveSafe.down) ||
+      (f.x === myHead.x && f.y === myHead.y + 1 && isMoveSafe.up)
+    );
+
+    snake.body.forEach((segment, index) => {
+      const isTail = index === snake.body.length - 1;
+      if (willEatFood || !isTail) {
+        if (segment.x === myHead.x - 1 && segment.y === myHead.y) {
+          isMoveSafe.left = false;
+        }
+        if (segment.x === myHead.x + 1 && segment.y === myHead.y) {
+          isMoveSafe.right = false;
+        }
+        if (segment.x === myHead.x && segment.y === myHead.y - 1) {
+          isMoveSafe.down = false;
+        }
+        if (segment.x === myHead.x && segment.y === myHead.y + 1) {
+          isMoveSafe.up = false;
+        }
       }
     });
   });
