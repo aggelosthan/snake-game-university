@@ -31,4 +31,4 @@ This project is part of our academic coursework and serves as both a foundation 
 - Loukas Kougiatsos
 - Grigoris Karakitsos
   
-- Special thanks to our instructors (Kosmas Kosmopoulos)
+- Special thanks to our instructor (Kosmas Kosmopoulos)
