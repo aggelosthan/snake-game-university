@@ -4,7 +4,6 @@
 
 This project is part of our academic coursework and serves as both a foundation for developing a Battlesnake bot and a practical exercise in using Git and GitHub. Throughout development, we practiced working with branches, pull requests, and collaborative version control.
 
----
 
 ## 🚀 Technologies Used
 
@@ -12,13 +11,11 @@ This project is part of our academic coursework and serves as both a foundation 
 - [Express](https://expressjs.com/) – Fast web framework for Node.js
 - [Battlesnake API](https://docs.battlesnake.com/) – Game rules and server interface
 
----
 
 ## 🎮 Battlesnake Gameplay Demo
 
 ![Battlesnake in action](https://github.com/user-attachments/assets/be090298-65a7-4e1f-9b22-171a71ac9ed6)
 
----
 
 ## 🧠 What We Learned
 
@@ -27,7 +24,6 @@ This project is part of our academic coursework and serves as both a foundation 
 - Creating feature branches and using GitHub Projects/Issues
 - Debugging and enhancing AI behavior for a competitive game bot
 
----
 
 ## 🧑‍💻 Contributors
 
