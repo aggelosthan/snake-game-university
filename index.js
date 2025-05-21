@@ -148,9 +148,9 @@ function move(gameState) {
     const theirLength = snake.length;
 
     if (theirLength >= myLength) {
-      if (myHead.x - 1 === theirHead.x && myHead.y === theirHead.y) isMoveSafe.left = false;
-      if (myHead.x + 1 === theirHead.x && myHead.y === theirHead.y) isMoveSafe.right = false;
-      if (myHead.x === theirHead.x && myHead.y - 1 === theirHead.y) isMoveSafe.down = false;
+      if (myHead.x - 1 === theirHead.x && myHead.y === theirHead.y)                       isMoveSafe.left = false;
+      if (myHead.x + 1 === theirHead.x && myHead.y === theirHead.y)                       isMoveSafe.right = false;
+      if (myHead.x === theirHead.x && myHead.y - 1 === theirHead.y)                       isMoveSafe.down = false;
       if (myHead.x === theirHead.x && myHead.y + 1 === theirHead.y) isMoveSafe.up = false;
     }
   });
